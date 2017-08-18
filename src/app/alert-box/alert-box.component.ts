@@ -9,7 +9,7 @@ import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 export class AlertBoxComponent {
   constructor( 
     public dialogRef: MdDialogRef<AlertBoxComponent>,
-              @Inject(MD_DIALOG_DATA) private data: any) 
+              @Inject(MD_DIALOG_DATA) public data: any) 
     
     {
     console.log(data); // the value passed as input

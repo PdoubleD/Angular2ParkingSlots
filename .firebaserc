@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "angular-firebase-material-todo"
+    "default": "angular-firebase-material-todo",
+    "test": "testangularproject-ce0d3"
   }
 }

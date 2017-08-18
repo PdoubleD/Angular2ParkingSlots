@@ -1,4 +1,4 @@
-# AngularFirebaseMaterialTodoApp
+# AngularFirebaseParkingSlotsApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
@@ -6,6 +6,7 @@ It is built using Angular 4 with Firebase based on AngularFire2 v4 and Angular M
 
 ## Demo
 
+https://testangularproject-ce0d3.firebaseapp.com/
 
 ## Development server
 
