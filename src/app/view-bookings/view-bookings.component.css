@@ -1,0 +1,26 @@
+.cards {
+    border: 1px solid grey;
+    margin: 5px;
+    width: 120px;
+    display: inline-block;
+}
+.flexBox {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.flex {
+    flex: 0 1 auto;
+}
+.details {
+    display: inline-block;
+}
+.center {
+    text-align: center;
+}
+.title {
+    background-color: rgb(151,104,209);
+    color: white;
+    padding: inherit;
+    text-transform: capitalize;
+}

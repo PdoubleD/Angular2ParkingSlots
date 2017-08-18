@@ -1,0 +1,19 @@
+{
+  "name": "Parking Slots",
+  "short_name": "Parking Slots",
+  "theme_color": "#3f51b5",
+  "background_color": "#3f51b5",
+  "display": "standalone",
+  "orientation": "portrait",
+  "Scope": "/",
+  "start_url": "/",
+  "description":"Parking Slots Booking App",
+  "icons": [
+    {
+      "src": "assets/parkingslots.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}

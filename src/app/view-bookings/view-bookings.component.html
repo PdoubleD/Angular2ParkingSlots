@@ -1,0 +1,36 @@
+<h3> Bookings List </h3>
+  <div>
+    <md-card class="cards" *ngFor="let b of bookings; let i = index">
+      <md-card-title class="center title"> {{b.user}} </md-card-title>
+      <md-card-content class="flexBox">
+        <span class="flex">
+          <h4 class="details"> Slot Id : </h4>
+          <p class="details"> {{b.id}} </p>
+        </span>
+        <span class="flex">
+          <h4 class="details"> Date : </h4>
+          <p class="details"> {{b.date}} </p>
+        </span>
+        <span class="flex">
+          <h4 class="details"> Start Time : </h4>
+          <p class="details"> {{b.start}} </p>
+        </span>
+        <span class="flex">
+          <h4 class="details"> End Time : </h4>
+          <p class="details"> {{b.end}} </p>
+        </span>
+        <span class="flex">
+          <h4 class="details"> Duration : </h4>
+          <p class="details"> {{b.duration}} </p>
+        </span>
+      </md-card-content>
+      <md-card-actions class="center">
+        <button md-mini-fab color="warn" (click)="cancelBooking(this.b, this.i)">
+          <i class="material-icons">delete</i>
+        </button>
+        <button md-mini-fab color="primary" (click)="printReceipt()">
+          <i class="material-icons">print</i>
+        </button>
+      </md-card-actions>
+    </md-card>
+  </div>

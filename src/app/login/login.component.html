@@ -1,0 +1,9 @@
+<div [hidden]="auth.loggingIn">
+  <md-card>
+    <div><button md-raised-button color="accent" (click)="loginWithGoogle()">Login With Google</button></div>
+    <div style="padding-top: 20px;"><button md-raised-button (click)="loginAnonymous()">Anonymous Login</button></div>
+  </md-card>
+</div>
+<div *ngIf="auth.loggingIn">
+  <md-spinner></md-spinner>
+</div>

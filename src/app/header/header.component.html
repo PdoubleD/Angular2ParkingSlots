@@ -1,0 +1,13 @@
+<md-toolbar color="primary">
+  
+  <img src="../../assets/parkingslot.svg" width="40px"/>
+  <span style="padding-left:10px;" (click)="resetStatusLogin()">Parking Slots</span>
+
+  <div class="fill"></div>
+
+  <span class="exit-app" mdTooltip="Logout" mdTooltipPosition="before" (click)="logout()" *ngIf="(auth.user | async)?.uid">
+    <md-icon>directions_run</md-icon>
+  </span>
+
+</md-toolbar>
+
