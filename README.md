@@ -6,7 +6,6 @@ It is built using Angular 4 with Firebase based on AngularFire2 v4 and Angular M
 
 ## Demo
 
-[https://angular-firebase-material-todo.firebaseapp.com](https://angular-firebase-material-todo.firebaseapp.com)
 
 ## Development server
 
