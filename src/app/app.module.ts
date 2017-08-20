@@ -1,3 +1,4 @@
+//Root Module
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +14,7 @@ import { MaterialModule, MdDialogModule } from '@angular/material';
 
 import { FlexLayoutModule } from "@angular/flex-layout";
 
-//import { TodosService } from "./services/todos.service";
+
 // Services
 import { AuthService } from "./services/auth.service";
 import { Talk2DBService } from './services/talk2-db.service';
@@ -25,9 +26,6 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-//import { TodosComponent } from './todos/todos.component';
-//import { TodosTabsComponent } from './todos/todos-tabs/todos-tabs.component';
-//import { NewTodosDialogComponent } from './/todos-tabs/new-todos-dialog/new-todos-dialog.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookParkingComponent } from './book-parking/book-parking.component';
 import { ViewBookingsComponent } from './view-bookings/view-bookings.component'
@@ -43,10 +41,7 @@ import { environment } from '../environments/environment';
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    //TodosComponent,
     FooterComponent,
-    //TodosTabsComponent,
-    //NewTodosDialogComponent,
     DashboardComponent,
     BookParkingComponent,
     ViewBookingsComponent,
@@ -69,11 +64,8 @@ import { environment } from '../environments/environment';
   exports: [
   ],
   entryComponents: [ 
-    //NewTodosDialogComponent,
     AlertBoxComponent
   ],
-  //providers: [AuthService, TodosService, MdDialogModule, Talk2DBService],
-  //providers: [AuthService, TodosService, UserDetailsService, MdDialogModule, Talk2DBService],
   providers: [AuthService, UserDetailsService, MdDialogModule, Talk2DBService],
   bootstrap: [AppComponent]
 })

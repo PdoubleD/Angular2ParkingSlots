@@ -62,6 +62,7 @@ export class Talk2DBService {
   ) {
     this.currentDate = new Date().toISOString().slice(0, 10); // 2017-01-30
 
+    //get any current bookings and push the values into an array 'temp' 
       this.angularFire.list('/bookings')
       .subscribe( (x) => {
         // console.log('subscribe');
@@ -89,10 +90,13 @@ export class Talk2DBService {
                     }
                   }
               }
+        //use <any> to avoid compilation errors and use minimal typechecking as we have set default values for bookedParkings anyway
         this.bookedParkings = <any>temp;
         console.log('bookedParkings: ', this.bookedParkings);
     });
   }
+
+  //not in use currently
   getFeedbacks() {
             this.feedback = this.angularFire.list('/feedbacks');
             this.feedback.subscribe((x) => {
@@ -107,6 +111,7 @@ export class Talk2DBService {
             });
             return this.feedbacks;
   }
+  //not in use currently
    ShowKey(key) {
     this.replyKey = key;
     this.feedback = this.angularFire.list('/feedbacks/' + this.replyKey);
@@ -115,13 +120,13 @@ export class Talk2DBService {
                   this.temp = {
                       uname: x[i].uname,
                       msg: x[i].msg,
-                      reply: x[i].reply || 'No Responce Yet',
+                      reply: x[i].reply || 'No Response Yet',
                       key: x[i].$key
                   };
               }
             });
   }
-
+  //not in use currently
   SendFeedback(formValue, name) {
     if (formValue.msg) {
       formValue.uname = name;
@@ -139,7 +144,7 @@ export class Talk2DBService {
         this.dialog.open(AlertBoxComponent, {data});
     }
   }
-
+  //not in use currently
   SendReply(val) {
     this.temp.reply = val.reply;
     this.angularFire.list('/feedbacks') // select node 'feedbacks
@@ -149,6 +154,7 @@ export class Talk2DBService {
         this.dialog.open(AlertBoxComponent, {data});
   }
 
+  // get the bookings for the current user, iterate through the items in the list and add each booking to our array 'bookings'
   viewUserBookings(key): any {
             this.item = this.angularFire.list('/bookings/' + key);
             this.item.subscribe((x) => {
@@ -167,6 +173,7 @@ export class Talk2DBService {
     return this.bookings;
   }
 
+    // get all of the bookings that are in the database, iterate through the items in the list and add each booking to our array 'bookings'
   viewAdminBookings(): any {
       this.userName = this.angularFire.list('/bookings');
       this.userName.subscribe((x) => {
@@ -192,6 +199,7 @@ export class Talk2DBService {
       return this.bookings;
   }
 
+  //delete the specified booking
   deleteBooking(currentObject) {
     this.item = this.angularFire.list('/bookings/' + currentObject.user); // user
     this.item.subscribe( x => this.item.remove(currentObject.key)); // node specified by the key is deleted from the db

@@ -15,6 +15,8 @@ export class UserDetailsService {
   //subscription = this.user$.subscribe(x => this.x = x);
 
   constructor() { }
+
+  //if the user is signed out we set go2home to true and return the value, we can use this in the components that utilise the user-details service
   navigateToHome(): boolean {
     if (this.x === 'signedout' || this.x === undefined) {
       this.go2home = true;
@@ -22,6 +24,7 @@ export class UserDetailsService {
     return this.go2home;
   }
 
+  
   userType(): string {
     if ( this.x !== 'signedout' &&  this.x !== undefined) {
       this.type = 'isUser'; // type of user

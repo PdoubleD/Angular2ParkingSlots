@@ -26,6 +26,7 @@ export class BookParkingComponent {
   startTime;
   timeDuration;
 
+  //set up the parking slots
   slots  = [
     { id: 0, isBooked: false, color: 'primary' },
     { id: 1, isBooked: false, color: 'primary' },

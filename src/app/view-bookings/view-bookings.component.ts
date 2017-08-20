@@ -17,7 +17,7 @@ export class ViewBookingsComponent implements OnInit {
   key;
   usertype: string;
 
-  //object that holds the key values for a booking
+  // holds the values for a booking
   bookings: [{
     id: string,
     user: string,
@@ -25,7 +25,8 @@ export class ViewBookingsComponent implements OnInit {
     start: number,
     end: string,
     duration: number,
-    key: string}];
+    key: string
+  }];
 
 constructor(
         public dialog: MdDialog,
@@ -34,11 +35,15 @@ constructor(
       ) {}
 
 ngOnInit() {
+    //set the key for the current user
     this.key = this.userDetail.user();
+
+    //Get the current usertype, either isAdmin or isUser
     //this.usertype = this.userDetail.userType(); // isAdmin
 
+    //if the usertype is admin we display all of the bookings, if the usertype is not admin, we display the bookings made only by the current user
     //if (this.usertype === 'isAdmin') {
-      //get the bookings for the current user
+      //get the bookings for the current user, viewAdminBookings() will pull the data from Talk2DBService
       this.bookings = this.getBookings.viewAdminBookings();
     //}
     //else if (this.usertype !== 'isAdmin') {
@@ -47,7 +52,7 @@ ngOnInit() {
  }
 
   cancelBooking(currentObject, index) { // db key is received as 'key'
-    this.getBookings.deleteBooking(currentObject); // used a method form talk2db service
+    this.getBookings.deleteBooking(currentObject); // invoke the deleteBooking method from talk2-db service
     this.bookings.splice(index , 1); // removed from the array
 
     // dialog box used as alert msg
