@@ -51,7 +51,6 @@ bookingDuration: string[] = ['1 hour', '2 hours', '3 hours', '4 hours', '5 hours
         this.dialog.open(AlertBoxComponent, {data});
       }
   }
-
   validateSlots(formVal) {
     if ( // form is empty
         (this.pickDate === undefined || this.pickDate === null)
@@ -100,7 +99,7 @@ bookingDuration: string[] = ['1 hour', '2 hours', '3 hours', '4 hours', '5 hours
 
   BookParkings(formVal, form) {
       for (let j = 1; j < this.bookedSlots.length; j++) {
-        if (this.bookedSlotId === this.bookedSlots[j]) {
+        if (this.bookedSlotId === this.bookedSlots[j]) { //check if slot is already booked
           this.errorFlag = true;
         }
       }
@@ -127,6 +126,7 @@ bookingDuration: string[] = ['1 hour', '2 hours', '3 hours', '4 hours', '5 hours
     this.errorFlag = false;
   }
 
+  //assign the slotId's id property value to bookedSlotId
   slotBooked(slotId) {
     this.bookedSlotId = slotId.id;
   }
